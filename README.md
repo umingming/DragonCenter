@@ -25,7 +25,7 @@
 
 ### 2. 개발 환경
 * Windows 10
-* Oracle 11.2.02
+* Oracle Database Express Edition Release 11.2.0.2.0
 * SQL Developer 21.2.1
 <br />
 
