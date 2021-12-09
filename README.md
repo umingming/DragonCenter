@@ -30,7 +30,7 @@
 <br />
 
 ### 3. 프로젝트 내용
-![erd3](https://user-images.githubusercontent.com/87955005/145211961-cea188bf-d646-47bb-9aec-c671d1af1002.png)
+![erd(수정)](https://user-images.githubusercontent.com/87955005/145387943-b75f7faf-d416-4a0f-906d-224d669ec121.png)
 #### 3-1. 관리자
 * 기초 정보 관리
 * 교사 및 교육생 관리
