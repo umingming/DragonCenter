@@ -123,6 +123,8 @@
 * 상세 조회시 과정명, 기간, 강의실, 등록 인원, 과목 개설 여부를 출력합니다.
   <img src = "https://user-images.githubusercontent.com/87955005/152354659-8ae1c463-1ab9-499b-90e4-ae3b1fdbff9f.png" width="60%" height="60%"><br />
   <img src = "https://user-images.githubusercontent.com/87955005/152354993-bccc7412-6ead-41c4-8b0c-b485e745708b.png" width="60%" height="60%"><br />
+
+<br />
 <br />
 
 ### 3. 강의 스케줄 조회
@@ -137,17 +139,264 @@
 <br />
 
 # 🔎 Detail
-### 1. 데이터 모델링
-#### 1-1. 무결성 제약 조건
+### 1. 과정 정보 등록
+* 과정을 등록할 때 입력하는 기간이 올바른지 확인하는 함수입니다.
+    ```sql
+    create or replace function fnIsValidPeriod (
+        pperiod number
+    ) return varchar2
+    is
+        vcheck varchar2(1);
+    begin
+        if pperiod in (5.5, 6, 7) then
+            vcheck := 'Y';
+        else 
+            vcheck := 'N';
+        end if;
+        return vcheck;
+    end fnIsValidPeriod;
+   ```
+* 등록 여부를 안내하는 프로시저입니다.
+    ```sql
+    create or replace procedure procAddCourse (
+        pname varchar2,
+        pperiod number
+    )
+    is
+    begin
+        dbms_output.put_line(chr(10) || '[과정 정보 등록]'  || chr(10)
+                                || 'No.' || course_seq.nextVal || ' ' || pname 
+                                || '(' || to_char(pperiod, '0.0') || '개월)' || chr(10));
 
-#### 1-2. 정규화
+        if fnIsValidPeriod(pperiod) = 'N' then
+            dbms_output.put_line('☞실패; 기간 부적합');
+        else 
+            insert into tblCourse (course_seq, course_name, course_period) 
+                values (course_seq.currVal, pname, pperiod);
+
+            dbms_output.put_line('☞성공!');    
+        end if;
+
+    exception
+        when others then
+            dbms_output.put_line('☞실패; ' || sqlerrm);
+    end procAddCourse;
+    ```
+* 과정명과 기간을 매개로 과정 정보를 등록합니다.
+    ```sql
+    begin
+        procAddCourse('짱 쉬운 개발자 과정', 7);
+    end;
+    ```
+    
+<br />
 <br />
 
-### 2. 중복 코드 관리
-#### 2-1. View 생성
+### 2. 개설 과정 함수
+* 입력한 시작일이 유효한지 알려주는 함수입니다.
+    ```sql
+    create or replace function fnIsValidDate (
+        pdate date
+    ) return varchar2
+    is
+        vcnt number;
+        vcheck varchar2(1);
+    begin
+        select count(*)
+            into vcnt 
+        from tblHoliday 
+        where holiday_date = pdate;
 
-#### 2-2. PL/SQL
+        if to_char(pdate, 'd') in ('1', '7') 
+            or pdate < sysdate 
+            or vcnt > 0 then
+            vcheck := 'N';
+        else
+            vcheck := 'Y';
+        end if;
 
+        return vcheck;
+    end fnIsValidDate;
+    ```
+* 과정을 등록하기 위해 입력한 강의실이 비어있는지 확인하는 함수입니다.
+    ```sql
+    create or replace function fnIsValidRoom (
+        pseq number,
+        pstartdate date
+    ) return varchar2
+    is
+        vdate date;
+        vcheck varchar2(1);
+    begin
+        select max(oc_enddate)
+            into vdate 
+        from vwOpenCourse 
+        where room_seq = pseq;
+
+        if vdate > pstartdate then
+            vcheck := 'N';
+        else
+            vcheck := 'Y';
+        end if;
+
+        return vcheck;
+    end fnIsValidRoom;
+    ```
+* 시작일과, 기간을 입력하면 종료일을 계산해주는 함수입니다.
+    ```sql
+    create or replace function fnGetEnddate (
+        pdate date,
+        pseq number
+    ) return date
+    is
+        vperiod number;
+    begin
+        select course_period
+            into vperiod from tblCourse
+        where course_seq = pseq;
+        return add_months(pdate, vperiod);
+    end fnGetEnddate;
+    ```
+    
+<br />
+<br />
+
+### 3. 개설 과정 수정
+* 개설 과정 테이블이 update되면 실행하는 트리거입니다.
+    ```sql
+    create or replace trigger trgUpdateOpenCourse
+        after
+        update on tblOpenCourse
+        for each row
+    begin 
+        dbms_output.put_line('수정 전: No.' || :old.oc_seq || ' ' 
+                                || fnGetCourseName(:old.course_seq)
+                                || '(' || :old.oc_startdate || ' ~ ' || :old.oc_enddate 
+                                || ', ' || fnGetRoomName(:old.room_seq) || ')');
+        dbms_output.put_line('수정 후: No.' || :new.oc_seq || ' ' 
+                                || fnGetCourseName(:new.course_seq)
+                                || '(' || :new.oc_startdate || ' ~ ' || :new.oc_enddate 
+                                || ', ' || fnGetRoomName(:new.room_seq) || ')');
+    end;
+    ```
+* 시작일, 종료일, 강의실을 함수를 통해 확인하고 수정 여부를 반환하는 프로시저입니다.
+    ```sql
+    create or replace procedure procUpdateOpenCourse (
+        pseq number,
+        pcseq number, 
+        pstartdate date,
+        penddate date,  
+        prseq number
+    )
+    is
+        vinfo varchar2(1000);
+    begin
+        dbms_output.put_line(chr(10) || '[개설 과정 수정]');
+
+        vinfo := 'No.' || pseq || ' ' || fnGetCourseName(pcseq)
+                    || '(' || pstartdate || ' ~ ' || penddate 
+                    || ', ' || fnGetRoomName(prseq) || ')' || chr(10) || chr(10); 
+
+        if fnIsValidDate(pstartdate) = 'N' then
+            dbms_output.put_line(vinfo || '☞실패; 시작일 부적합');
+        elsif fnIsValidDate(penddate) = 'N' 
+            or penddate < pstartdate then
+            dbms_output.put_line(vinfo || '☞실패; 종료일 부적합');
+        elsif fnIsValidRoom(prseq, pstartdate) = 'N' then
+            dbms_output.put_line(vinfo || '☞실패; 강의실 부적합');
+        else 
+            dbms_output.put_line(vinfo || '☞성공!');
+
+            update tblOpenCourse set course_seq = pcseq, 
+                                     oc_startdate = pstartdate,
+                                     oc_enddate = penddate,
+                                     room_seq = prseq
+            where oc_seq = pseq;
+        end if;
+
+    exception
+        when others then
+            dbms_output.put_line(vinfo || '실패; ' || sqlerrm);
+    end procUpdateOpenCourse;
+    ```
+    
+<br />
+<br />
+
+### 4. 강의 일정 조회
+* 개설 과정, 교사 테이블 등 강의 스케줄에 필요한 테이블을 inner join한 교사 일정 뷰입니다.
+    ```sql
+    create or replace view vwTeacherSchedule
+    as
+    select
+        tt.teacher_seq as teacher_seq,
+        tt.teacher_name as teacher_name,
+        tc.course_name as course_name,
+        toc.oc_startdate as oc_startdate,
+        toc.oc_enddate as oc_enddate,
+        case
+            when toc.oc_startdate > sysdate then '예정'
+            when toc.oc_enddate >= sysdate then '진행'
+            when toc.oc_enddate < sysdate then '종료'
+        end as state
+    from tblOpenCourse toc inner join tblCourse tc
+        on (toc.course_seq = tc.course_seq) inner join tblTeacherManagement ttm
+        on (ttm.oc_seq = toc.oc_seq) inner join tblTeacher tt
+        on (tt.teacher_seq = ttm.teacher_seq) inner join (select max(tm_seq) as final
+                                                        from tblTeacherManagement
+                                                        group by oc_seq) ttmr
+        on (ttm.tm_seq = ttmr.final) 
+    order by toc.oc_startdate desc;
+    ```
+* 교사 일정 뷰로부터 교사들의 일정을 모두 저장하는 프로시저입니다.
+    ```sql
+    create or replace procedure procSetTeacherSchedule(
+        presult out sys_refcursor,
+        pseq number
+    )
+    is
+        vc tblTeacher%rowtype;
+    begin
+        select * 
+            into vc 
+        from tblTeacher
+        where teacher_seq = pseq;
+
+        dbms_output.put_line(chr(10) || '[ ' || vc.teacher_name || ' 선생님 강의 스케줄 조회 ]');
+            dbms_output.put_line('------------------------------------------------------------');
+            dbms_output.put_line('|' || lpad('과정명', 43) || lpad('|', 41) 
+                                || lpad('기간', 17) || lpad('|', 13) 
+                                || '상태|');
+            dbms_output.put_line('------------------------------------------------------------');
+
+        open presult
+            for select * from vwTeacherSchedule
+                where teacher_seq = pseq
+                order by oc_startdate desc;
+    end procSetTeacherSchedule;
+    ```
+* 교사 고유 번호로 강의 스케줄을 조회하기 위한 프로시저입니다.
+    ```sql
+    create or replace procedure procGetTeacherSchedule(
+        pseq number
+    )
+    is
+        vresult sys_refcursor;
+        vrow vwTeacherSchedule%rowtype;
+        vname vwTeacherSchedule.course_name%type;
+    begin
+        procSetTeacherSchedule(vresult, pseq);
+
+        loop
+            fetch vresult into vrow;
+            exit when vresult%notfound;
+            dbms_output.put_line('|' || chr(9) || vrow.course_name || chr(9)
+                                    || '|' || vrow.oc_startdate || '~' || vrow.oc_enddate 
+                                    || '|' || vrow.state || '|');
+            dbms_output.put_line('------------------------------------------------------------');
+        end loop;
+    end procGetTeacherSchedule;
+    ```
 
 <br />
 <br />
