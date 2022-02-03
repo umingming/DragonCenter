@@ -122,7 +122,6 @@
 #### 2-5. 개설 과정 상세 조회
 * 상세 조회시 과정명, 기간, 강의실, 등록 인원, 과목 개설 여부를 출력합니다.
   <img src = "https://user-images.githubusercontent.com/87955005/152354659-8ae1c463-1ab9-499b-90e4-ae3b1fdbff9f.png" width="60%" height="60%"><br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152354993-bccc7412-6ead-41c4-8b0c-b485e745708b.png" width="60%" height="60%"><br />
 
 <br />
 <br />
