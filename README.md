@@ -401,11 +401,5 @@
 <br />
 <br />
 <br />
-
-# 💡 Consideration
-### 1. 후기
-
-<br />
-<br />
 <br />
 
