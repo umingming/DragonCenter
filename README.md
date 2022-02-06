@@ -9,7 +9,6 @@
 * [📖 Introduction](#-introduction)
 * [🙋 My Role](#-my-role)
 * [🔎 Detail](#-detail)
-* [💡 Consideration](#-consideration)
 
 <br />
 <br />
