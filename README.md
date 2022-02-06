@@ -19,8 +19,8 @@
 
 # 📖 Introduction
 ### 1. 프로젝트 개요
-* 교육 과정을 개설하고 해당 과정에 필요한 정보 운영
-* 교육생 모집과 사후 관리 서비스 지원
+* **교육 과정**을 개설하고 해당 과정에 필요한 **정보 운영**
+* 교육생 **모집**과 **사후 관리** 서비스 지원
 <br />
 
 ### 2. 개발 환경
@@ -58,79 +58,80 @@
 
 # 🙋 My Role
 ### 1. 기초 정보 관리
-<img src = "https://user-images.githubusercontent.com/87955005/152362867-be206053-9317-4e6d-bc88-5a5184b4c70f.png" width="70%" height="70%"><br />
+<img src = "https://user-images.githubusercontent.com/87955005/152362867-be206053-9317-4e6d-bc88-5a5184b4c70f.png" width="50%" height="50%"><br />
 #### 1-1. 기초 정보 조회
-* 과정, 과목, 강의실, 교재 정보를 조회합니다. 
-* 과정의 경우 과정명과 기간을 조회할 수 있습니다.<br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152348841-e0dad7d9-8d15-41e1-9ae1-5d43140f092f.png" width="60%" height="60%">
+* 과정, 과목, 강의실, 교재 **정보**를 **조회**합니다. 
+* 과정의 경우 **과정명**과 **기간**을 조회할 수 있습니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152348841-e0dad7d9-8d15-41e1-9ae1-5d43140f092f.png" width="45%" height="60%">
 <br />
 
 #### 1-2. 기초 정보 등록
-* 과정, 과목, 강의실, 교재를 등록합니다.
-* 과정 등록시 입력 기간이 부적합할 경우 안내합니다.<br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152349085-a18358af-6d1b-4543-8150-5100f8cf1202.png" width="60%" height="60%"><br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152349096-6af7ca89-45e0-4bd1-b80e-3fc335d6b918.png" width="60%" height="60%"><br />
+* 과정, 과목, 강의실, 교재를 **등록**합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152349085-a18358af-6d1b-4543-8150-5100f8cf1202.png" width="30%" height="30%"><br /><br />
+* 과정 등록시 입력 **기간**이 **부적합**할 경우 **안내**합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152349096-6af7ca89-45e0-4bd1-b80e-3fc335d6b918.png" width="30%" height="30%"><br />
 <br />
 
 #### 1-3. 기초 정보 수정
-* 과정, 과목, 강의실, 교재 정보를 수정합니다.
-* 성공적으로 수정되면, 수정 전과 후의 정보를 출력합니다.<br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152349237-7cc866fe-9e75-4c33-8be9-754517d4fa94.png" width="60%" height="60%"><br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152349286-e5b90306-a900-4ae4-a367-1c450e5db730.png" width="60%" height="60%"><br />
+* 과정, 과목, 강의실, 교재 **정보**를 **수정**합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152349237-7cc866fe-9e75-4c33-8be9-754517d4fa94.png" width="30%" height="30%"><br /><br />
+* 성공적으로 수정되면, **수정 전**과 **후**의 정보를 출력합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152349286-e5b90306-a900-4ae4-a367-1c450e5db730.png" width="35%" height="35%"><br />
 <br />
 
 #### 1-4. 기초 정보 삭제
-* 과정, 과목, 강의실, 교재 정보를 삭제합니다.<br />
-* 실패할 경우 원인을 안내합니다.<br/>
-  <img src = "https://user-images.githubusercontent.com/87955005/152349462-9819d29c-bce9-4344-95a0-dd2ffec68c3c.png" width="60%" height="60%"><br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152349472-d7928c09-2d50-44a1-a5c8-ffd7ca63f357.png" width="60%" height="60%"><br />
+* 과정, 과목, 강의실, 교재 정보를 **삭제**합니다.<br/>
+  <img src = "https://user-images.githubusercontent.com/87955005/152349462-9819d29c-bce9-4344-95a0-dd2ffec68c3c.png" width="45%" height="60%"><br /><br />
+* 실패할 경우 **원인**을 **안내**합니다.<br/>
+  <img src = "https://user-images.githubusercontent.com/87955005/152349472-d7928c09-2d50-44a1-a5c8-ffd7ca63f357.png" width="45%" height="60%"><br />
 
 <br />
 <br />
 
 ### 2. 개설 과정 관리
-<img src = "https://user-images.githubusercontent.com/87955005/152363689-2c3fa297-19f4-42d6-ac25-8a686bfab015.png" width="70%" height="60%"><br />
+<img src = "https://user-images.githubusercontent.com/87955005/152363689-2c3fa297-19f4-42d6-ac25-8a686bfab015.png" width="50%" height="50%"><br />
 #### 2-1. 개설 과정 정보 조회
-* 센터 내 개설된 과정에 대해 조회합니다.
-* 조회시 과정명, 기간, 강의실, 수용 인원 출력합니다.<br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152349462-9819d29c-bce9-4344-95a0-dd2ffec68c3c.png" width="60%" height="60%"><br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152349472-d7928c09-2d50-44a1-a5c8-ffd7ca63f357.png" width="60%" height="60%"><br />
+* 센터 내 개설된 **과정**에 대해 **조회**합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152349462-9819d29c-bce9-4344-95a0-dd2ffec68c3c.png" width="45%" height="60%"><br /><br />
+* 조회시 **과정명**, **기간**, **강의실**, **수용 인원** 출력합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152349472-d7928c09-2d50-44a1-a5c8-ffd7ca63f357.png" width="45%" height="60%"><br />
 <br />
 
 #### 2-2. 개설 과정 정보 등록
-* 과정, 시작일, 종료일, 강의실을 입력해 과정을 개설합니다.
-* 입력 값이 모두 적합한 경우만 개설에 성공합니다.<br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152352133-e0a9834a-d7b9-4196-b014-47e155704d3a.png" width="60%" height="60%"><br />
+* 과정, 시작일, 종료일, 강의실을 입력해 **과정**을 **개설**합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152352721-cf645d50-adb6-41f2-b5b6-018f5f1307cc.png" width="60%" height="60%"><br /><br />
+* 입력 값이 적합하지 않을 경우 **개설**에 **실패**합니다.<br />
   <img src = "https://user-images.githubusercontent.com/87955005/152352652-d02d622d-175a-4b2c-9445-418eeb0723a3.png" width="60%" height="60%"><br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152352721-cf645d50-adb6-41f2-b5b6-018f5f1307cc.png" width="60%" height="60%"><br />
 <br />
 
 #### 2-3. 개설 과정 정보 수정
-* 개설 과정 수정도 마찬가지로 입력 값이 모두 적합한 경우만 가능합니다.
+* 개설 과정 수정도 마찬가지로 입력 값이 **모두** **적합**한 경우만 가능합니다.<br />
   <img src = "https://user-images.githubusercontent.com/87955005/152353195-e02b96a9-8ac8-42c2-b21f-bbc9ecc97efc.png" width="60%" height="60%"><br />
   <img src = "https://user-images.githubusercontent.com/87955005/152353241-2dc6c597-826c-4f33-b08b-12a33b8f78ac.png" width="60%" height="60%"><br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152353289-d7ed3ebb-2de5-4eb2-a807-830689529b3e.png" width="60%" height="60%"><br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152353289-d7ed3ebb-2de5-4eb2-a807-830689529b3e.png" width="60%" height="60%"><br /><br />
+* 성공적으로 **수정**되면 수전 **전**과 **후**의 정보를 안내합니다.<br />
   <img src = "https://user-images.githubusercontent.com/87955005/152353444-cfd3c283-fa3a-4722-9b89-c7277611e4f5.png" width="60%" height="60%"><br />
 <br />
 
 #### 2-4. 개설 과정 정보 삭제
-* 개설 과정은 해당 데이터를 참조하지 않는 겨우만 삭제합니다.
+* 개설 과정 **번호**를 매개로 정보를 **삭제**합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152354217-23256d47-24ab-47c5-a5d9-c2ecff71ccb7.png" width="60%" height="60%"><br /><br />
+* 해당 과정을 **참조**하는 데이터가 있을 경우 삭제에 **실패**합니다.<br />
   <img src = "https://user-images.githubusercontent.com/87955005/152353932-821135c6-4774-4124-b4e2-dfc776fbb780.png" width="60%" height="60%"><br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152354217-23256d47-24ab-47c5-a5d9-c2ecff71ccb7.png" width="60%" height="60%"><br />
 <br />
 
 #### 2-5. 개설 과정 상세 조회
-* 상세 조회시 과정명, 기간, 강의실, 등록 인원, 과목 개설 여부를 출력합니다.
+* **상세 조회**시 과정명, 기간, 강의실, 등록 인원, 과목 개설 여부를 출력합니다.
   <img src = "https://user-images.githubusercontent.com/87955005/152354659-8ae1c463-1ab9-499b-90e4-ae3b1fdbff9f.png" width="60%" height="60%"><br />
 
 <br />
 <br />
 
 ### 3. 강의 스케줄 조회
-<img src = "https://user-images.githubusercontent.com/87955005/152364337-977d1ab6-a7dd-4805-9bb0-e891b2fd04ff.png" width="70%" height="70%"><br />
+<img src = "https://user-images.githubusercontent.com/87955005/152364337-977d1ab6-a7dd-4805-9bb0-e891b2fd04ff.png" width="50%" height="50%"><br />
 #### 3-1. 현재 강의 스케줄 확인
-* 교사 본인의 강의 스케줄을 확인합니다.<br />
-  <img src = "https://user-images.githubusercontent.com/87955005/152354993-bccc7412-6ead-41c4-8b0c-b485e745708b.png" width="60%" height="60%"><br />
+* 교사 본인의 강의 **스케줄**을 **확인**합니다.<br />
+  <img src = "https://user-images.githubusercontent.com/87955005/152354993-bccc7412-6ead-41c4-8b0c-b485e745708b.png" width="50%" height="60%"><br />
 
 
 <br />
@@ -139,7 +140,7 @@
 
 # 🔎 Detail
 ### 1. 과정 정보 등록
-* 과정을 등록할 때 입력하는 기간이 올바른지 확인하는 함수입니다.
+* 과정을 등록할 때 입력하는 **기간**이 올바른지 **확인**하는 함수입니다.
     ```sql
     create or replace function fnIsValidPeriod (
         pperiod number
@@ -155,7 +156,7 @@
         return vcheck;
     end fnIsValidPeriod;
    ```
-* 등록 여부를 안내하는 프로시저입니다.
+* 등록 **여부**를 안내하는 **프로시저**입니다.
     ```sql
     create or replace procedure procAddCourse (
         pname varchar2,
@@ -181,7 +182,7 @@
             dbms_output.put_line('☞실패; ' || sqlerrm);
     end procAddCourse;
     ```
-* 과정명과 기간을 매개로 과정 정보를 등록합니다.
+* 과정명과 기간을 매개로 **과정 정보**를 등록합니다.
     ```sql
     begin
         procAddCourse('짱 쉬운 개발자 과정', 7);
@@ -192,7 +193,7 @@
 <br />
 
 ### 2. 개설 과정 함수
-* 입력한 시작일이 유효한지 알려주는 함수입니다.
+* 입력한 **시작일**이 **유효**한지 알려주는 함수입니다.
     ```sql
     create or replace function fnIsValidDate (
         pdate date
@@ -217,7 +218,7 @@
         return vcheck;
     end fnIsValidDate;
     ```
-* 과정을 등록하기 위해 입력한 강의실이 비어있는지 확인하는 함수입니다.
+* 과정을 등록하기 위해 입력한 **강의실**이 비어있는지 **확인**하는 함수입니다.
     ```sql
     create or replace function fnIsValidRoom (
         pseq number,
@@ -241,7 +242,7 @@
         return vcheck;
     end fnIsValidRoom;
     ```
-* 시작일과, 기간을 입력하면 종료일을 계산해주는 함수입니다.
+* 시작일과, 기간을 입력하면 **종료일**을 **계산**해주는 함수입니다.
     ```sql
     create or replace function fnGetEnddate (
         pdate date,
@@ -261,7 +262,7 @@
 <br />
 
 ### 3. 개설 과정 수정
-* 개설 과정 테이블이 update되면 실행하는 트리거입니다.
+* 개설 과정 테이블이 **update**되면 실행하는 **트리거**입니다.
     ```sql
     create or replace trigger trgUpdateOpenCourse
         after
@@ -278,7 +279,7 @@
                                 || ', ' || fnGetRoomName(:new.room_seq) || ')');
     end;
     ```
-* 시작일, 종료일, 강의실을 함수를 통해 확인하고 수정 여부를 반환하는 프로시저입니다.
+* 시작일, 종료일, 강의실을 함수를 통해 확인하고 **수정 여부**를 **반환**하는 **프로시저**입니다.
     ```sql
     create or replace procedure procUpdateOpenCourse (
         pseq number,
@@ -323,7 +324,7 @@
 <br />
 
 ### 4. 강의 일정 조회
-* 개설 과정, 교사 테이블 등 강의 스케줄에 필요한 테이블을 inner join한 교사 일정 뷰입니다.
+* 개설 과정, 교사 테이블 등 강의 **스케줄**에 필요한 테이블을 **inner join**한 교사 일정 **뷰**입니다.
     ```sql
     create or replace view vwTeacherSchedule
     as
@@ -347,7 +348,7 @@
         on (ttm.tm_seq = ttmr.final) 
     order by toc.oc_startdate desc;
     ```
-* 교사 일정 뷰로부터 교사들의 일정을 모두 저장하는 프로시저입니다.
+* 교사 일정 뷰로부터 교사들의 **일정**을 모두 **저장**하는 **프로시저**입니다.
     ```sql
     create or replace procedure procSetTeacherSchedule(
         presult out sys_refcursor,
@@ -374,7 +375,7 @@
                 order by oc_startdate desc;
     end procSetTeacherSchedule;
     ```
-* 교사 고유 번호로 강의 스케줄을 조회하기 위한 프로시저입니다.
+* **교사 고유 번호**로 강의 스케줄을 **조회**하기 위한 프로시저입니다.
     ```sql
     create or replace procedure procGetTeacherSchedule(
         pseq number
@@ -402,9 +403,9 @@
 <br />
 
 # 💡 Consideration
-### 1. 협업
-<br />
+### 1. 후기
 
-### 2. 코드 리뷰
+<br />
+<br />
 <br />
 
